@@ -1,0 +1,37 @@
+# .github/workflows/parallel.yml
+name: End-to-end tests parallel
+on: [push]
+jobs:
+  batch-1:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Search
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run Cypress tests from batch 1
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          command: npm run test:batch-1
+  batch-2:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Product
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run Cypress tests from batch 2
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          command: npm run test:batch-2
+  batch-3:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Solutions
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run Cypress tests from batch 3
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          command: npm run test:batch-3

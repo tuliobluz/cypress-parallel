@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test:batch-1": "cypress run --spec 'cypress/e2e/batch-1'",
+    "test:batch-2": "cypress run --spec 'cypress/e2e/batch-2'",
+    "test:batch-3": "cypress run --spec 'cypress/e2e/batch-3'"
+  },
+  "devDependencies": {
+    "cypress": "^12.10.0"
+  }
+}
