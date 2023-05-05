@@ -1,15 +1,15 @@
-const selectors = {
+describe('Solutions page', () => {
+  const selectors = {
     container: '.container-xl',
-  }
-  
-  describe('Solutions page', () => {
-    beforeEach(() => {
-      cy.visit('/solutions/ci-cd/');
-    });
-  
-    it('Check action page', () => {
-        cy.get(selectors.container)
-            .should('be.visible')
-            .contains('CI/CD solution')
-    });
+  };
+
+  beforeEach(() => {
+    cy.visit('/solutions/ci-cd/');
   });
+
+  it('displays CI/CD solution text in the container', () => {
+    cy.get(selectors.container)
+      .should('be.visible')
+      .contains('CI/CD solution');
+  });
+})
